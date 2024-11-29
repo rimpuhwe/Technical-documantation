@@ -13,7 +13,7 @@
     --code-color4:#800080;
     --nav-color:#01011c;
     --text-color:#2d2d2d;
-    --background-codecolor:#eeeeef;
+    --background-codecolor:#c9c9c9;
     --border:2px solid #cac9c9;
     --font-family1:Verdana, Geneva, Tahoma, sans-serif;
     --font-family2:Georgia, 'Times New Roman', Times, serif;
@@ -84,9 +84,8 @@ main{
 }
 /* styling all element nested in code element */
 code{
-    background:var(--background-codecolor) ;
-    border-radius:5px ;
-    border:1px solid var(--background-codecolor);
+    font-size: 16px;
+    font-weight: 600;
     padding:2px;
     margin-left:5px;
 }
@@ -101,4 +100,31 @@ code{
 .main-section li{
     width:fit-content;
     margin-left:20px;
+}
+/* styling the code snippets */
+.logic{
+    width:60%;
+    line-height:normal;
+    padding:10px;
+    margin:15px 40px;
+    border-radius: 10px;
+    background:transparent;
+    border:1px solid var(--background-codecolor);
+}
+/* different style to code element with classname of function */
+.logic .function{
+    font-weight: lighter;   
+}
+/* setting the colors to make the code snippets more readable and efficieny */
+code span[class="purple"]{
+    color:var(--code-color4);
+}
+code span[class="green"]{
+    color:var(--code-color1);
+}
+code span[class="blue"]{
+    color:var(--code-color3);
+}
+code span[class="red"]{
+    color:var(--code-color2);
 }
