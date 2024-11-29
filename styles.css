@@ -128,3 +128,17 @@ code span[class="blue"]{
 code span[class="red"]{
     color:var(--code-color2);
 }
+/* div container which nest a span */
+div span{
+    width:50px;
+    padding:5px;
+}
+/* the listed highlight to focus on  */
+div span[class="big"]{
+    font-size:15px;
+    font-weight: bold;
+    border:3px solid var(--border-color);
+}
+span[class="fun"]{
+    font-size:18px;
+}
