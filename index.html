@@ -9,19 +9,135 @@
 <body>
     <!-- navigation bar -->
     <nav id="navbar">
-        <header>Kotlin programming language</header>
+        <header>
+            <h1>Kotlin programming language</h1>
+        </header>
         <ul>
-            <li><a class="nav-link" href="#introduction">Before you begin</a></li>
-            <li><a class="nav-link" href="#definition">Define and call function</a></li>
-            <li><a class="nav-link" href="#return">Return a value from function</a></li>
-            <li><a class="nav-link" href="#functions">Functions with multiple parameters</a></li>
-            <li><a class="nav-link" href="#argument">Named argument</a></li>
-            <li><a class="nav-link" href="#conclusion">conclusion</a></li>
+            <li><a class="nav-link" href="#Before_you_begin">Before you begin</a></li>
+            <li><a class="nav-link" href="#Define_and_call_function">Define and call function</a></li>
+            <li><a class="nav-link" href="#Return_a_value_from_a_function">Return a value from a function</a></li>
+            <li><a class="nav-link" href="#Function_with_multiple_parameters">Function with multiple parameters</a></li>
+            <li><a class="nav-link" href="#Named_argument">Named argument</a></li>
+            <li><a class="nav-link" href="#Conclusion">Conclusion</a></li>
         </ul>
-        
     </nav>
+    
     <!-- main with id of main-doc -->
     <main id="main-doc">
+        <!-- the introduction section -->
+        <section class="main-section" id="Before_you_begin">
+            <header id="introduction">Before you begin</header>
+            <p>In an earlier codelab, you saw a simple program that printed <code>Hello, world!</code>. In the programs you have  written so far, you have  seen two functions:</p>
+            <ul>
+                <li>a <code>main()</code> function, which is required in every Kotlin program. It is the entry point, or starting point, of the program.</li>
+                <li>a <code>println()</code> function, which you called from <code>main()</code> to output text.</li>  
+            </ul> <p>In this codelab, you will learn more about functions.</p>
+            <p>Functions let you break up your code into reusable pieces, rather than include everything in <code>main()</code>. Functions are an essential building block of Android apps and learning how to define and use them is a major step on your journey to become an Android developer.</p>
+        </section>
+        <!-- how to define and call a function section -->
+        <section class="main-section" id="Define_and_call_function">
+            <header id="definition">Define and call function</header>
+            <p>Before exploring functions in-depth, let's review some basic terminology.</p>
+            <ul>
+                <!-- using the code element to define the word which is code text format  -->
+                <li>Declaring (or defining) a function uses the <code>fun</code> keyword and includes code within the curly braces which contains the instructions needed to execute a task.</li>
+                <li>Calling a function causes all the code contained in that function to execute.</li>
+            </ul>
+            <p>So far, you've written all your code in the <code>main()</code> function. The function <code>main()</code>doesn't actually get called anywhere in your code; the Kotlin compiler uses it as a starting point. 
+                The <code>main()</code> function is intended only to include other code you want to execute, such as calls to the <code>println()</code> function.
+            </p>
+            <p>The <code>println()</code> function is part of the Kotlin language. However, you can define your own functions. This allows your code to be reused if you need to call it more than once. Take the following program as an example.</p>
+            <div class="logic">
+               <code class="function">
+                  fun main() {<br>
+                       println(<span class="green">"Happy Birthday, Rover!"</span>)<br>
+                       println(<span class="green">"You are now 5 years old!"</span>)<br>
+                     }
+                 </code>    
+            </div>
+            <p>The <code>main()</code> function consists of two <code>println()</code> statements—one to wish Rover a happy birthday, and another stating Rover's age.</p>
+        </section>
+        <!-- Returning a value from a function section -->
+        <section class="main-section" id="Return_a_value_from_a_function">
+            <header id="return">Return a value from a function</header>
+            <p>In more complex apps, functions do more than print text.</p>
+            <p>Kotlin functions can also generate data called a return value which is stored in a variable that you can use elsewhere in your code.</p>
+            <p>When defining a function, you can specify the data type of the value you want it to return. The return type is specified by placing a colon (<code>:</code>) after the parentheses, a single blank space, and then the name of the type (<code>Int</code>, <code>String</code>, etc).
+                 A single space is then placed between the return type and the opening curly brace. Within the function body, after all the statements, you use a return statement to specify the value you want the function to return. A return statement consists of the <code>return</code> keyword followed by the value
+                 , such as a variable, you want the function to return as an output.
+            </p>
+        </section>
+        <!-- Multiple parameters of a function -->
+        <section class="main-section" id="Function_with_multiple_parameters">
+            <header id="functions">Function with multiple parameters</header>
+            <p>Previously, you added a parameter to change the greeting based on the name. However, you can also define more than one parameter for a function, even parameters of different data types. In this section, you'll modify the greeting so that it also changes based on the dog's age.</p>
+            <div>
+                <span class="fun"> fun </span><span class="big">Function Name</span> ( <span class="big">FirstParameter</span>, <span class="big">SecondParameter</span>,.... )</span>
+            </div>
+            <p>Parameter definitions are separated by commas. Similarly, when you call a function with multiple parameters, you separate the arguments passed in with commas as well. Let's see this in action.</p>
+            <ol>
+                <li>After the <code>name</code> parameter, add an <code>age</code> parameter of type <code>Int</code>, to the <code>birthdayGreeting()</code> function. The new function declaration should have the two parameters, <code>name</code> and <code>age</code>, separated by a comma:</li>
+                <div class="logic">
+                    <code class="function">
+                        fun birthdayGreeting(name: <span class="purple">String</span>, age: <span class="purple">Int</span>): <span class="purple">String</span> {<br>
+                        val nameGreeting = <span class="green">"Happy Birthday, $name!"</span><br>
+                        val ageGreeting = <span class="green">"You are now 5 years old!"</span><br>
+                        <span class="blue">return</span> <span class="green">"$nameGreeting\n$ageGreeting"</span><br>
+                       }
+                    </code>
+                </div>
+                <li>The new greeting string should use the <code>age</code> parameter. Update the <code>birthdayGreeting()</code> function to use the value of the <code>age</code> parameter in the <code>ageGreeting</code> string.</li>
+                <div class="logic">
+                    <code class="function">
+                        fun birthdayGreeting(name: <span class="purple">String</span>, age: <span class="purple">Int</span>): <span class="purple">String</span> {<br>
+                            val nameGreeting = <span class="green">"Happy Birthday, $name!"</span><br>
+                            val ageGreeting = <span class="green">"You are now $age years old!"</span><br>
+                            <span class="blue">return</span> <span class="green">"$nameGreeting\n$ageGreeting"</span><br>
+                        }
+                    </code>   
+                </div>
+            </ol>
+        </section>
+        <!-- Named argument  -->
+        <section class="main-section" id="Named_argument">
+            <header id="argument">Named argument</header>
+            <p>In the previous examples, you didn't need to specify the parameter names, <code>name</code> or <code>age</code>, when you called a function. However, you're able to do so if you choose.
+                 For example, you may call a function with many parameters or you may want to pass your arguments in a different order, such as putting the age parameter before the name parameter.
+                  When you include the parameter name when you call a function, it's called a <span>named argument</span>. Try using a named argument with the <code>birthdayGreeting()</code> function.
+            </p>
+            <ol>
+                <li>Modify the call for Rex to use named arguments as shown in this code snippet. You can do this by including the parameter name followed by an equal sign, and then the value (e.g. <code>name = "Rex"</code>).</li>
+                <div class="logic">
+                    <code class="function">
+                        println(birthdayGreeting(name = <span class="green">"Rex"</span>, age = <span class="red">2</span>))
+                    </code>
+                </div>
+                <li>Run the code and then observe that the output is unchanged:</li>
+                <div class="logic">
+                    <code class="function">
+                        Happy Birthday, Rover!<br>
+                        You are now 5 years old!<br>
+                        Happy Birthday, Rex!<br>
+                        You are now 2 years old!
+                    </code>
+                </div>
+            </ol>
+        </section>
+        <!-- here comes to the end with conclusion  -->
+        <section class="main-section" id="Conclusion">
+            <header id="conclusion">Conclusion</header>
+            <p>Congratulations! You learned how to define and call functions in Kotlin<p>
+                <fieldset>
+                    <legend>Summary</legend>
+                    <ul>
+                        <li>Functions are defined with the <code>fun</code> keyword and contain reusable pieces of code.</li>
+                        <li>Functions can return a value that you can store in a variable for later use.</li>
+                        <li>Functions can take parameters, which are variables available inside a function body.</li>
+                        <li>Arguments are the values that you pass in when you call a function.</li>
+                        <li>you can specify a default argument that lets you omit the argument when you call a function.</li>
+                    </ul>
+                </fieldset>
+        </section>
 
     </main>
     
