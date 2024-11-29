@@ -34,6 +34,8 @@ body{
     flex-direction: column;  
     gap:20px;
     margin:10px 15px;
+    position:sticky;
+    top:0;
 }
 #navbar ul li{
     padding:10px;
@@ -64,14 +66,14 @@ a{
 /*  styling the main  */
 main{
     flex:1;
-    padding:10px 20px;
-    border:1px solid red; 
+    padding:10px 20px; 
     color:var(--text-color);  
 }
 /* sections  */
 .main-section{
-    border:1px solid green;
     line-height: 40px;
+    padding-bottom:20px;
+    margin-bottom:20px;
 }
 /* sections header */
 .main-section header{
