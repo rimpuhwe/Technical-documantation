@@ -142,3 +142,11 @@ div span[class="big"]{
 span[class="fun"]{
     font-size:18px;
 }
+/* the element in the fieldset */
+fieldset{
+    border:none;
+}
+legend{
+    font-size: 20px;
+    font-weight:600;
+}
