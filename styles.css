@@ -27,7 +27,8 @@ body{
 /* navigation bar */
 #navbar{
     width:25%;
-    border:1px solid #000;
+    border:1px dashed var(--nav-color);
+    box-shadow: -5px 5px var(--nav-color);
     height: fit-content;
     padding:2px 0;
     display: flex;
@@ -62,6 +63,7 @@ a{
 }
 #navbar header h1{
     font-size: 24px;
+    text-transform: capitalize;
 }
 /*  styling the main  */
 main{
@@ -152,3 +154,64 @@ legend{
     font-size: 20px;
     font-weight:600;
 }
+/* responsiveness on 3 different screen device  */
+/* lagrer screens than laptops  */
+@media screen and (min-width:1025px) {
+    .logic{
+        width:70%;
+        padding:15px 25px;
+        margin:15px 60px;
+    }   
+}
+/* large screens like desktops and laptops */
+@media (min-width: 769px) and (max-width:1024){
+    .logic{
+        width:80%;
+    }   
+}
+/* small devices like moblie and tablets devices  */
+@media (min-width: 481px) and (max-width: 768px) { 
+    body{
+        flex-direction: column;
+    }
+    #navbar{
+        width:100%;
+        margin: 0;
+        border:unset;
+        box-shadow: none;
+        position:relative;   
+    }
+    #navbar ul{
+        border:1px solid var(--nav-color);
+    }
+    #navbar ul li{
+        padding:10px 5px;
+    }
+    .logic{
+        width:80%;
+    }
+ } 
+ /* smaller screen like mobile phone  */
+ @media screen and (max-width: 480px){
+    body{
+        flex-direction: column;
+    }
+    #navbar{
+        width:100%;
+        margin: 0;
+        border:unset;
+        box-shadow: none;
+        position:relative;   
+    }
+    #navbar ul{
+        border:1px solid var(--nav-color);
+    }
+    #navbar ul li{
+        padding:5px 5px;
+        margin-left: 10px;
+    }  
+    .logic{
+        width:100%;
+        margin:15px 0;
+    } 
+ }
